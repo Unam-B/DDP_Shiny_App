@@ -1,0 +1,40 @@
+---
+title: 'MT Cars: Simple Linear Regression Diagnostics App'
+author: "Unam Bakumeni"
+date: "12 February 2017"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## About the Application
+
+The purpose of the 'MT Cars: Simple Linear Regression Diagnostics App' is to teach users about diagnostic plots that can be run on a simply linear regression model using the MT Cars dataset readily available in R. A user selects the target variable and then an input variable. Following this, the app creates a regression model and displays the diagnostic plots for the model. The app also explains how each plot can be interpreted in order to determine whether the model is good or not.
+
+## The Data Set
+
+The data set used in the app is pulled from the 1974 Motor Trend US magazine and consists of the following variables for 32 cars:
+
+```{r mtcars, echo = TRUE}
+head(mtcars)
+```
+
+## Default Regression Model and Diagnostics
+
+By default, the app creates a simple linear regrssion model using the cars displacement to predict miles per gallon. Below is an example of the diagnostic plots created with the default model. The app fully explains how to inpertret each plot
+
+```{r}
+fit <- lm(mpg~disp, data = mtcars)
+
+par(mfrow=c(2,2))
+plot(fit)
+
+```
+
+## Accessing the app
+
+You can access the app at the following [link](https://unam-b.shinyapps.io/DDP_Shiny_App/)
+
+
